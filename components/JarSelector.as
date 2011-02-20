@@ -17,8 +17,6 @@ package components
     import mx.events.ListEvent;
     import mx.collections.ArrayCollection;
 
-    import nochump.util.zip.ZipFile;
-    import nochump.util.zip.ZipError;
     import mx.skins.halo.BusyCursor;
     import mx.collections.IViewCursor;
 

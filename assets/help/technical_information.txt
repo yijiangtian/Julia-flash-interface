@@ -1,9 +1,9 @@
-Julia is a Java application that analyzes, statically, other Java applications and finds bugs in them. Currently, it finds bugs related to null pointer exceptions and non-termination. Other classes of bug detection techniques are on their way.
+Julia is a Java application that analyzes, statically, other Java applications and finds bugs in them. Currently, it finds bugs related to null pointer exceptions, non-termination and a set of checks on the structure of your code. Other classes of bug detection techniques are on their way.
 
 Differently from other tools for static analysis, Julia has no false negative warnings but only false positive warnings. This is the consequence of the use of a theoretically sound technique known as Abstract Interpretation.
 
 Differently from other tools for abstract interpretation, Julia does not limit the way you write programs. You can create objects dynamically, use recursion and dynamic dispatch. You do not have to write annotations in your code. Julia will understand what you mean and will be able to construct a precise picture of the heap memory of your system during the execution of your application.
 
-Julia is a web service, hence you can use it immediately from this web page: provide the compiled code of the application to analyze (one or more jar files). You do not need to include the source code, nor assets such as text, pictures or sounds.
+Julia can run as a web service, hence you can use it immediately from this web page: provide the compiled code of the application to analyze (one or more jar files). You do not need to include the source code, nor assets such as text, pictures or sounds.
 
-We license Julia as a single .war file that you can easily deploy into your tomcat container.
+We license Julia as a single .war file that you can easily deploy into your tomcat container. Or as a single .jar file that you can run from command-line.

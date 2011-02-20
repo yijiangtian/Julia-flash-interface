@@ -5,6 +5,10 @@ We are at
 Strada le Grazie, 15
 37134 Verona, Italy
 
-For email information about the Julia software, please contact us at:
+For more information on the Julia software, please contact us at:
 
-julia-team AT cs.unipr.it 
+info@juliasoft.com
+
+or visit our web site at
+
+http://www.juliasoft.com

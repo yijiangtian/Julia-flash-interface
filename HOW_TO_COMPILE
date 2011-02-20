@@ -1,0 +1,1 @@
+mxmlc -compiler.theme=YOUR_FLEX_SDK_DIR/frameworks/themes/Halo/halo.swc Julia.mxml

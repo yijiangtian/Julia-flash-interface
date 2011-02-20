@@ -4,4 +4,4 @@ You don't have to add all library jars used by your applications. More library j
 
 As a rule of thumb, you should add only those library jars that might contain call-backs to your application code, or otherwise the analysis of Julia might not cover your application completely and it might yield incorrect results.
 
-For nullness analysis, Julia automatically includes classes from java.* and javax.swing.*. For termination analysis, Julia automatically includes classes from java.lang.* and java.util.*. Hence, you do not have to include those classes explicitly. In general, do not add jars containing other classes from the standard Java library.
+Julia automatically includes classes in the java.*, javax.swing.* and android.* hierarchies. Hence, you do not have to include those classes explicitly.

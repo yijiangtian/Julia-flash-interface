@@ -1,0 +1,13 @@
+This analysis performs some simple checks on your application:
+
+- BAD_CLASSNAME: spots non-standard classnames, for instance non-capitalized 
+- BAD_EQ: possibly wrong use of .equals() instead of ==, or vice versa
+- BAD_OVERRIDE: possibly wrong argument types or method name in overriding methods
+- CALL_SUPER: possibly wrong policy while calling super() in overriding methods
+- CLASSCAST: possibly wrong classcast
+- FIELD_NEVER_READ: a field is never read in reachable code
+- FIELD_NEVER_USED: a field is never used in reachable code
+- FIELD_NEVER_WRITTEN: a field is never written in reachable code
+- SET_STATIC_IN_NON_STATIC: a static field is assigned from a non-static context
+- UNCALLED: a method or constructor is never called from the application
+- USELESS_ASSIGNMENT: a local variable is assigned but never used again later

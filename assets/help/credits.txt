@@ -1,7 +1,6 @@
-Julia has been developed at the universities of Parma, Réunion and Verona.
+Julia has been developed at the universities of Réunion and Verona.
 
 It uses the following third-party software:
 
 - BCEL (http://jakarta.apache.org/bcel), a byte code engineering library, licensed under the Apache Licence (http://jakarta.apache.org/bcel/license.html)
 - JavaBDD (http://javabdd.sourceforge.net), a library for binary decision diagram, licensed under the GNU LGPL license (http://www.gnu.org/licenses/lgpl.html)
-- PPL (http://www.cs.unipr.it/ppl), a library for the manipulation of numerical constraints, licensed to Julia by their authors

@@ -32,12 +32,6 @@ package components
         [Embed (source="/assets/icons/brick.png" )]
         private static const _applicationIcon:Class;
 
-        [Embed (source="/assets/icons/Java-logo.png" )]
-        private static const _javaIcon:Class;
-
-        [Embed (source="/assets/icons/Android-logo.png" )]
-        private static const _androidIcon:Class;
-
         private var file:FileReference;
 
         public function JarSelector()

@@ -27,12 +27,6 @@
             [Embed (source="/assets/icons/brick_add.png" )]
             private static const _applicationAddIcon:Class;
 
-            [Embed (source="/assets/icons/Java-logo.png" )]
-            private static const _javaIcon:Class;
-
-            [Embed (source="/assets/icons/Android-logo.png" )]
-            private static const _androidIcon:Class;
-
             private function init():void {
                 var tf:IUITextField = applications_panel.mx_internal::getStatusTextField();
                 tf.selectable = true;

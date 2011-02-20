@@ -1,0 +1,26 @@
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+mx|Application {
+   backgroundSize: "100%";
+   backgroundGradientColors: #bbbfc9, #d8c0bc;
+}
+
+mx|Panel {
+   borderAlpha: 1;
+   borderThicknessLeft: 10;
+   borderThicknessTop: 0;
+   borderThicknessBottom: 10;
+   borderThicknessRight: 10;
+   borderColor: #ddeeff;
+   roundedBottomCorners: true;
+   backgroundAlpha: 1;
+   highlightAlphas: 1, 1;
+   shadowDistance: 9;
+   shadowDirection: left;
+   dropShadowColor: #000000;
+}
+
+mx|Button {
+   highlightAlphas: 1, 0;
+   fillAlphas: 1, 1, 1, 1;
+}

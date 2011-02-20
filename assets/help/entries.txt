@@ -1,0 +1,7 @@
+An entry is a program point that Julia considers as the starting point of the program.
+
+This web interface lets you specify only main() methods as entries of Java applications and Android activities as entries of Android applications. You have to specify at least one entry to run the analyzer. This choice means that this web interface does not let you analyze libraries. This is our explicit choice, since the static, global analysis of libraries has no formal meaning: libraries can change their behavior if their methods get overridden. Moreover, libraries may perform call-backs to external, unknown code that calls them. Finally, libraries might start their execution from any state, so that the precision of an analysis can only be very coarse without manual annotations on those input states (can parameters be null? cyclic? can they share with each other?). For these reasons, we prefer to ban the analysis of libraries with this web interface.
+
+Nevertheless, you can still analyze a library with this web interface. Just write one (or more) main() methods that call the library methods and cover most (or even all) their execution contexts. Keep in mind, however, that the results of the analysis might be incorrect for the other, uncovered calling contexts.
+
+If you need static analysis for libraries, please contact us and explain your hypotheses on the context where the library will be used.

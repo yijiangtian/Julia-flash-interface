@@ -1,0 +1,7 @@
+List here the jar files that Julia will analyze. Warnings are reported for application jars, but not for library jars. Both kinds of jars are analyzed.
+
+You don't have to add all library jars used by your applications. More library jars mean a more precise analysis but a more expensive and long computation. So populate this list with care.
+
+As a rule of thumb, you should add only those library jars that might contain call-backs to your application code, or otherwise the analysis of Julia might not cover your application completely and it might yield incorrect results.
+
+For nullness analysis, Julia automatically includes classes from java.* and javax.swing.*. For termination analysis, Julia automatically includes classes from java.lang.* and java.util.*. Hence, you do not have to include those classes explicitly. In general, do not add jars containing other classes from the standard Java library.

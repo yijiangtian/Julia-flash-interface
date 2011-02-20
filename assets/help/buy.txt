@@ -1,0 +1,5 @@
+Our company produces Julia and sells its licences. For information, please contact us at
+
+julia-team AT cs.unipr.it
+
+We are available for the development of custom versions of Julia. Just let us know which kind of static analysis for Java you need and we will be glad to implement a specialized version of Julia. The tool already includes very precise and efficient formally correct static analyses for the approximation of the heap memory of the system. Hence we are in the position to build very precise new static analyses on top of it.

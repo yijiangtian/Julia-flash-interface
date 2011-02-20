@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application creationComplete="init()"
+	xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" verticalGap="50" verticalAlign="middle"
+	xmlns:components="components.*"
+	xmlns:help="help.*"
+	xmlns:lists="com.flextoolbox.controls.*">
+
+	<mx:Style source="julia.css"/>
+
+    <mx:Script>
+        <![CDATA[
+        	import analyse.NullnessAnalyser;
+        	import analyse.TerminationAnalyser;
+        	import analyse.CoverityAnalyser;
+
+        	import mx.collections.ArrayCollection;
+            import mx.core.IUITextField;
+            import mx.controls.Alert;
+            import mx.managers.CursorManager;
+ 
+ 			import flash.events.SecurityErrorEvent;
+ 			import ext.MultipartURLLoader;
+
+			[Embed (source="/assets/icons/book_add.png" )]
+    	    private static const _libraryAddIcon:Class;
+
+			[Embed (source="/assets/icons/brick_add.png" )]
+    	    private static const _applicationAddIcon:Class;
+
+			[Embed (source="/assets/icons/Java-logo.png" )]
+    	    private static const _javaIcon:Class;
+
+			[Embed (source="/assets/icons/Android-logo.png" )]
+    	    private static const _androidIcon:Class;
+
+            private function init():void {
+                var tf:IUITextField = applications_panel.mx_internal::getStatusTextField();
+                tf.selectable = true;
+                tf.textColor = 0x4444ff;
+                tf.addEventListener(TextEvent.LINK, jars_help);
+                tf.htmlText = "<a href='event:showAlert'><u>what is this?</u></a>"; 
+
+	            tf = entries_panel.mx_internal::getStatusTextField();
+                tf.selectable = true;
+                tf.textColor = 0x4444ff;
+                tf.addEventListener(TextEvent.LINK, entries_help);
+                tf.htmlText = "<a href='event:showAlert'><u>what is this?</u></a>";
+            }
+ 
+            private function jars_help(evt:TextEvent):void {
+                helper.jars();
+            }
+
+            private function entries_help(evt:TextEvent):void {
+                helper.entries();
+            }
+        ]]>
+    </mx:Script>
+
+	<help:Helper id="helper"/>
+
+	<mx:Label fontSize="30" fontWeight="bold" text="Welcome to the Julia analyzer"/>
+
+	<mx:HBox verticalAlign="middle" horizontalGap="50">
+		<mx:VBox horizontalAlign="center" verticalGap="30">
+			<mx:HBox>
+			    <mx:Button label="Add an application jar" fontSize="14" toolTip="{Helper.jarsText}" icon="{_applicationAddIcon}" click="{application_list.addApplicationJar()}"/>
+		    	<mx:Button label="Add a library jar" fontSize="14" toolTip="{Helper.jarsText}" icon="{_libraryAddIcon}" click="{application_list.addLibraryJar()}"/>
+		    </mx:HBox>
+			<mx:Panel id="applications_panel" title="jars (click to remove)" textAlign="center" status="what is this?">
+				<components:JarSelector id="application_list" mains = "{cbl.dataProvider as ArrayCollection}" width="400" height="70"/>
+			</mx:Panel>
+			<mx:HBox>
+				<mx:Button label="Nullness analysis" fontSize="14" toolTip="{Helper.nullnessText}"
+					click="{if (cbl.selectedIndices.length > 0) new NullnessAnalyser(this); else Alert.show('Please select at least an entry point.');}"/>
+				<mx:Button label="Termination analysis" fontSize="14" toolTip="{Helper.terminationText}"
+					click="{if (cbl.selectedIndices.length > 0) new TerminationAnalyser(this); else Alert.show('Please select at least an entry point.');}"/>
+				<mx:Button label="Checks" fontSize="14" toolTip="{Helper.coverityText}"
+					click="{if (cbl.selectedIndices.length > 0) new CoverityAnalyser(this); else Alert.show('Please select at least an entry point.');}"/>
+			</mx:HBox>
+		</mx:VBox>
+		<mx:VBox horizontalAlign="center" >
+			<mx:Panel id="entries_panel" title="Entry points for the analysis (select at least one)" textAlign="center" status="what is this?">
+				<lists:CheckBoxList id="cbl" width="500" dataProvider="{entries}" height="120" labelField="label" iconField="icon" />
+			</mx:Panel>
+			<mx:Spacer height="10" />
+			<mx:HBox>
+		        <mx:Button label="Java application"
+        	        icon="{_javaIcon}"
+            	    mouseEnabled="false"
+                	skin="{null}" />
+
+		        <mx:Button label="Android activity"
+        	        icon="{_androidIcon}"
+            	    mouseEnabled="false"
+                	skin="{null}" />
+		    </mx:HBox>
+		</mx:VBox>
+	</mx:HBox>
+
+	<mx:ArrayCollection id="entries"/>
+
+	<mx:HRule width="60%" />
+
+	<mx:ControlBar>
+		<mx:LinkButton label="Buy Julia" fontSize="11" color="#888899" click="{helper.buy()}"/>
+		<mx:LinkButton label="Technical information" fontSize="11" color="#888899" click="{helper.technical_information()}"/>
+		<mx:LinkButton label="Credits" fontSize="11" color="#888899" click="{helper.credits()}"/>
+		<mx:LinkButton label="Contacts" fontSize="11" color="#888899" click="{helper.contacts()}"/>
+	</mx:ControlBar>
+</mx:Application>

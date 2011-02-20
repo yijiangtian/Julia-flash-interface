@@ -1,0 +1,5 @@
+This analysis performs a set of simple checks on the code.
+
+Currently implemented:
+
+- bad_eq:

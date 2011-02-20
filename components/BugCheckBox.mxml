@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:CheckBox xmlns="mx.*" xmlns:mx="http://www.adobe.com/2006/mxml">
+	 <mx:upIcon>@Embed('file:/assets/icons/bug.png')</mx:upIcon>
+     <mx:overIcon>@Embed('file:/assets/icons/bug.png')</mx:overIcon>
+     <mx:downIcon>@Embed('file:/assets/icons/bug.png')</mx:downIcon>
+     <mx:selectedUpIcon>@Embed('file:/assets/icons/tick.png')</mx:selectedUpIcon>
+     <mx:selectedOverIcon>@Embed('file:/assets/icons/tick.png')</mx:selectedOverIcon>
+     <mx:selectedDownIcon>@Embed('file:/assets/icons/tick.png')</mx:selectedDownIcon>
+     <mx:width>20</mx:width>
+     <mx:height>20</mx:height>
+</mx:CheckBox>

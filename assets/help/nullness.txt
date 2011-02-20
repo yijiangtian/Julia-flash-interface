@@ -2,6 +2,6 @@ Nullness analysis determines all program points where your program might throw a
 
 The correctness guarantee of Julia states that if your program can throw such an exception, then Julia should report a warning at that program point. The converse, in general, does not hold. Hence Julia will report several false alarms. It will let you scan those alarms so that you can manually check them and mark them as spurious.
 
-Nullness analysis is run with all java.* and javax.swing.* classes included. The total number of reachable methods must not exceed 10,000 (this includes library methods). This protects our server from overloading and guarantees a response in at most 30 minutes.
+The total number of reachable methods must not exceed 10,000 (this includes library methods). This protects our server from overloading and guarantees a response in at most 30 minutes.
 
 If you need to analyze larger applications, please buy a licence of our software and install it on a powerful computer. 8 gigabytes of RAM are enough for 10,000 methods. More memory allows larger analyses.

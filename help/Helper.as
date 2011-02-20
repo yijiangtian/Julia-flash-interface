@@ -15,10 +15,6 @@ package help
         private static const jarsTextClass: Class;
         public static const jarsText:String = new jarsTextClass().toString();
 
-        [Embed("/assets/help/entries.txt", mimeType="application/octet-stream")]
-        private static const entriesTextClass: Class;
-        public static const entriesText:String = new entriesTextClass().toString();
-
         [Embed("/assets/help/nullness.txt", mimeType="application/octet-stream")]
         private static const nullnessTextClass: Class;
         public static const nullnessText:String = new nullnessTextClass().toString();
@@ -51,10 +47,6 @@ package help
 
         public function jars():void {
             Alert.show(jarsText, "Jars");
-        }
-
-        public function entries():void {
-            Alert.show(entriesText, "Entries");
         }
 
         public function contacts():void {

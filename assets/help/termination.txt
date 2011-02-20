@@ -2,6 +2,6 @@ Termination analysis determines those methods and constructors whose execution m
 
 The correctness guarantee of Julia states that if a method or constructor of your program does not terminate, then Julia finds it. The converse, in general, does not hold. Hence Julia will report several false alarms. It will let you scan those alarms so that you can manually check them and mark them as spurious.
 
-Termination analysis is run with all java.lang.* and java.util.* classes included. The total number of reachable methods must not exceed 2,000 (this includes library methods). This protects our server from overloading and guarantees a response in at most 30 minutes.
+The total number of reachable methods must not exceed 8,500 (this includes library methods). This protects our server from overloading and guarantees a response in at most 30 minutes.
 
-If you need to analyze larger applications, please buy a licence of our software and install it on a powerful computer. 8 gigabytes of RAM are enough for 2,000 methods. More memory allows larger analyses.
+If you need to analyze larger applications, please buy a licence of our software and install it on a powerful computer. 8 gigabytes of RAM are enough for 8,500 methods. More memory allows larger analyses.

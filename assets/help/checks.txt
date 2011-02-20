@@ -11,3 +11,7 @@ This analysis performs some simple checks on your application:
 - SET_STATIC_IN_NON_STATIC: a static field is assigned from a non-static context
 - UNCALLED: a method or constructor is never called from the application
 - USELESS_ASSIGNMENT: a local variable is assigned but never used again later
+
+The total number of reachable methods must not exceed 15,000 (this includes library methods). This protects our server from overloading and guarantees a response in at most 30 minutes.
+
+If you need to analyze larger applications, please buy a licence of our software and install it on a powerful computer. 8 gigabytes of RAM are enough for 15,000 methods. More memory allows larger analyses.

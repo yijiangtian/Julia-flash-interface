@@ -289,6 +289,12 @@ package analyse
                     return;
                 }
 
+		// some progress bar might still be there, if the analysis
+		// finished without waiting for the termination of all
+		// subanalyses: in that case, it is better to clean the screen
+		// from unused bars
+		analyser.removeAllChildren();
+
                 // we show the warnings and the problems, if any
                 showWarnings(warnings, problems);
             }

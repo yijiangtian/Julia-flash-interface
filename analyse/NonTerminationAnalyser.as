@@ -5,11 +5,13 @@ package analyse
 	 * A web interface for termination analysis. It is a window the contacts the
 	 * analysis server, shows progress bars during the analysis and finally reports
 	 * the number of warnings and problems and let the user interact with them.
+	 * The configuration of the analysis is that used in the paper on
+	 * non-termination analysis by Etienne Payet, Fred Mesnard and Fausto Spoto.
 	 *
 	 * @author <fausto.spoto@univr.i>
 	 */
 
-	public class TerminationAnalyser extends Analyser
+	public class NonTerminationAnalyser extends Analyser
 	{
 
 		/**
@@ -20,9 +22,9 @@ package analyse
 		 * 			entry points.
 		 */
 
-		public function TerminationAnalyser(julia:Julia)
+		public function NonTerminationAnalyser(julia:Julia)
 		{
-			super(julia, "Termination Analysis", "TerminationAnalysis");
+			super(julia, "Termination Analysis", "NonTerminationAnalysis");
 		}
 	}
 }

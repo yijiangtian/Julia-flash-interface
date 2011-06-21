@@ -9,9 +9,7 @@
 
     <mx:Script>
         <![CDATA[
-            import analyse.NullnessAnalyser;
-            import analyse.TerminationAnalyser;
-            import analyse.ChecksAnalyser;
+            import analyse.NonTerminationAnalyser;
 
             import mx.collections.ArrayCollection;
             import mx.core.IUITextField;
@@ -43,9 +41,9 @@
 
     <help:Helper id="helper"/>
 
-    <mx:Label fontSize="30" fontWeight="bold" text="Welcome to the Julia analyzer"/>
-
     <mx:VBox horizontalAlign="center" verticalGap="30">
+        <mx:Label fontSize="30" fontWeight="bold" text="Welcome to the Julia analyzer"/>
+        <mx:Label fontSize="20" fontWeight="bold" text="Special configuration for Termination/Non-Termination Experiments"/>
         <mx:HBox>
             <mx:Button label="Add an application jar" fontSize="12" toolTip="{Helper.jarsText}" icon="{_applicationAddIcon}" click="{application_list.addApplicationJar()}"/>
             <mx:Button label="Add a library jar" fontSize="12" toolTip="{Helper.jarsText}" icon="{_libraryAddIcon}" click="{application_list.addLibraryJar()}"/>
@@ -54,12 +52,8 @@
             <components:JarSelector id="application_list" width="500" height="80"/>
         </mx:Panel>
         <mx:HBox>
-            <mx:Button label="Nullness analysis" fontSize="12" toolTip="{Helper.nullnessText}"
-                click="{if (application_list.ok()) new NullnessAnalyser(this); else Alert.show('Please provide at least an application jar file.');}"/>
-            <mx:Button label="Termination analysis" fontSize="12" toolTip="{Helper.terminationText}"
-                click="{if (application_list.ok()) new TerminationAnalyser(this); else Alert.show('Please provide at least an application jar file.');}"/>
-            <mx:Button label="Checks" fontSize="12" toolTip="{Helper.checksText}"
-                click="{if (application_list.ok()) new ChecksAnalyser(this); else Alert.show('Please provide at least an application jar file.');}"/>
+            <mx:Button label="(Non-)Termination analysis" fontSize="12" toolTip="{Helper.terminationText}"
+                click="{if (application_list.ok()) new NonTerminationAnalyser(this); else Alert.show('Please provide at least an application jar file.');}"/>
         </mx:HBox>
     </mx:VBox>
 
